@@ -31,12 +31,53 @@
         h3 {
             font-size: 16px;
         }
+        a {
+            color: #FF4E00;
+        }
+        p {
+            font-size: 14px;
+        }
+        .subnav-link{
+            font-size:16px;
+            color:black;
+            padding-right:15px;
+        }
 
-        button {
-            background-color: orange;
+        .button--confirm {
+                    background: #7F5EBA;
+                    border: 1px solid #7F5EBA;
+                    border-radius: 5px;
+                    color: white;
+                    height: 40px;
+                    width: 100px;
+                    text-align: center;
+                    vertical-align: center;
+            }
+
+        .button--disabled{
+            background-color: #8F5EBA !important;
+            color: #DDDDDD !important;
+            border: 1px solid #7F5EBA;
             border-radius: 5px;
-            padding: 10px;
-            color: white;
+            height: 40px;
+            width: 100px;
+            text-align: center;
+            vertical-align: center;        
+            background: rgb(241, 237, 247);
+            border-color: rgb(184, 165, 217);
+            color: #7F5EBA;
+            opacity: .5;
+        }
+
+        .button--cancel{
+                    border: 1px solid #7F5EBA;
+                    color: #7F5EBA;
+                    background: white;
+                    font-weight: 500;
+                    width: 100px;
+                    height: 40px;
+                    text-align: center;
+                    margin-right: 5px;      
         }
 
         .inputLabel {
@@ -46,7 +87,15 @@
 
         input.inputField {
             padding: 5px;
-            border: 1px solid orange;
+            border: 1px solid #f21818;
+            background: rgb(245, 245, 245);
+            border-radius: 3px;
+        }
+        input.inputFieldNormal {
+            padding: 5px;
+            border: 1px solid #696969;
+            background: rgb(245, 245, 245);
+            border-radius: 3px;
         }
 
         div.box {
@@ -57,44 +106,44 @@
         }
 
         #primary1 {
-            background-color: orange;
+            background-color: #FF4E00;
         }
 
         #primary2 {
-            background-color: red;
+            background-color: #7F5EBA;
         }
 
         #primary3 {
-            background-color: yellow;
+            background-color: #01ADAB;
         }
 
         .warning {
-            background-color: yellow;
+            background-color: #FFC02E;
             font-weight: bold;
-            color: black;
+            color: rgb(245, 245, 245);
             padding: 10px;
             border-radius: 5px;
         }
 
         .danger {
-            background-color: red;
+            background-color:#f21818;
             font-weight: bold;
-            color: white;
+            color: rgb(245, 245, 245);
             padding: 10px;
             border-radius: 5px;
         }
 
         .success {
-            background-color: green;
+            background-color: #01ADAB;
             font-weight: bold;
-            color: white;
+            color: rgb(245, 245, 245);
             padding: 10px;
             border-radius: 5px;
         }
 
-        svg.svg-inline--fa {
+        /* svg.svg-inline--fa {
             color: white;
-        }
+        } */
 
         .spacer {
             margin-top: 25px;
@@ -105,15 +154,68 @@
             margin-top: 50px;
             padding: 10px;
             text-align: center;
+            background: #FF4E00;
+        }
+        .nav{
+            background: #FF4E00 !important;
+        }
+        .subnav{
+            background: white !important;
+            border-bottom: 1px solid #696969;
+        }
+        .list-group-item{
+            background: rgb(245, 245, 245);
+        }
+        .list-group-item-odd{
+            background:white;
+        }
+        .table-header{
+            background: #01ADAB;
+            text-align: center;
+            color: black;
+        }
+        .fa-chevron-down{
+            color:black;
+            font-size: 12px
+        }
+        .footer-text{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:12px;
+            color:white;
+        }  
+        
+        .dropdown-content {
+            display: block;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
     </style>
-	<!-- Include script for font awesome icon library -->
+    <!-- Include script for font awesome icon library -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 
 <body>
     <a name="Top"></a>
-    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="navbar navbar-inverse navbar-static-top nav" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <a href="#">
@@ -123,25 +225,42 @@
             </div>
         </div>
     </div>
+    <div class="navbar navbar-inverse navbar-static-top subnav">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="subnav-link">Home</a>
+                <a class="subnav-link">Dropdown
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="col-md-3">
             <ul class="list-group">
+                <li class="list-group-item table-header">Generic Header</li>
                 <li class="list-group-item">
                     <a href="#font">Font</a>
                 </li>
+                <li class="list-group-item list-group-item-odd">
+                    <a href="#header">Header/Footer</a>
+                </li>
                 <li class="list-group-item">
+                    <a href="#Grid">Grid</a>
+                </li>
+                <li class="list-group-item list-group-item-odd">
                     <a href="#colorTheme">Color Theme</a>
                 </li>
                 <li class="list-group-item">
                     <a href="#headings">Headings</a>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item list-group-item-odd">
                     <a href="#buttons">Buttons</a>
                 </li>
                 <li class="list-group-item">
                     <a href="#formElements">Form Elements</a>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item list-group-item-odd">
                     <a href="#messages">Messages</a>
                 </li>
             </ul>
@@ -163,13 +282,43 @@
                     <h1>
                         <a name="fonts"></a>Font</h1>
                 </div>
-                <p>My application utilizes the "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica,
-                    Arial, "sans-serif" font-family with black text.</p>
+                <p>My application utilizes the Helvetica, Arial, "sans-serif" font-family with black text.</p>
+                <p>The Font-Awesome font-family is used for home icon and chevrons.</p>
+                <p>White text utilizes the fonts "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed".</p>
             </div>
             <div class="spacer">
                 <a href="#Top">Back to Top</a>
             </div>
             <!-- End Fonts -->
+
+            <!-- header/footer -->
+            <div>
+                <div class="page-header">
+                    <h1>
+                        <a name="header"></a>Header, Sub Header, Footer</h1>
+                </div>
+                <p>The header and footer will be orange in color with white text.</p>
+                <p>The sub header is white with a solid gray border and black text.</p>
+            </div>
+            <div class="spacer">
+                <a href="#Top">Back to Top</a>
+            </div>
+            <!-- End header/footer -->
+
+            <!-- Grid -->
+            <div>
+                <div class="page-header">
+                    <h1>
+                        <a name="Grid"></a>Grid Component</h1>
+                </div>
+                <p>An example of the grid component is used for page navigation.</p>
+                <p>The grid header or headers will be blue in color with a light gray border and black text.</p>
+                <p>Each row in the grid will alternate between a light gray color and white color.</p>
+            </div>
+            <div class="spacer">
+                <a href="#Top">Back to Top</a>
+            </div>
+            <!-- End Grid -->
 
             <!-- Color Theme -->
             <div>
@@ -181,6 +330,9 @@
                 <div class="box" id="primary1"></div>
                 <div class="box" id="primary2"></div>
                 <div class="box" id="primary3"></div>
+                <div>Header/footer and links are in orange.</div>
+                <div>Buttons are in purple.</div>
+                <div>Table headers are blue.</div>
             </div>
             <div class="spacer">
                 <a href="#Top">Back to Top</a>
@@ -194,9 +346,10 @@
                         <a name="headings"></a>Headings</h1>
                 </div>
                 <p>The below font sizes and styles are used in the application for various content headings.</p>
-                <h1>Heading 1</h1>
-                <h2>Heading 2</h2>
-                <h3>Heading 3</h3>
+                <h1>Heading 1 is 24px and bold.</h1>
+                <h2>Heading 2 is 20px.</h2>
+                <h3>Heading 3 is 16px.</h3>
+                <p>Paragraphs are 14px.</p>
             </div>
             <div class="spacer">
                 <a href="#Top">Back to Top</a>
@@ -210,7 +363,9 @@
                         <a name="buttons"></a>Buttons</h1>
                 </div>
                 <p>The application will feature buttons that contain the below color and shape:</p>
-                <button>My Button</button>
+                <button class="button--confirm">Confirm</button>
+                <button class="button--disabled">Disabled</button>
+                <button class="button--cancel">Cancel</button>
             </div>
             <div class="spacer">
                 <a href="#Top">Back to Top</a>
@@ -223,12 +378,33 @@
                     <h1>
                         <a name="formElements"></a>Form Elements</h1>
                 </div>
-                <p>For the varous forms that the application will contain, it will contain input fields and labels with the below styling:</p>
+                <p>For the varous forms that the application will contain, it will contain input fields and labels with
+                    the below styling:</p>
                 <form>
-                    <label for="name" class="inputLabel">Name</label>
-                    <input type="input" id="name" class="inputField" value="">
+                    <label for="name" class="inputLabel">Required Box:</label>
+                    <input type="input" id="validation" class="inputField" value="">
+                    Red border means field is required!
                 </form>
+                <form>
+                    <label for="name" class="inputLabel">Normal Box:&nbsp;&nbsp;</label>
+                    <input type="input" id="normal" class="inputFieldNormal" value="">
+                    Gray border means field is not required!
+                </form>
+
+                <p>Dropdown menus will consist of a white box with gray shadow. Links will have a gray hover.</p>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+
             </div>
+            
+            <p>.</p>
+            <p>.</p>
+            <p>.</p>
+            <p>.</p>
+            <p>&nbsp;</p>
             <div class="spacer">
                 <a href="#Top">Back to Top</a>
             </div>
@@ -240,7 +416,8 @@
                     <h1>
                         <a name="messages"></a>Messages</h1>
                 </div>
-                <p>For various completed tasks, application notifications will be presented to the user based.  The following contextual messages will be used.</p>
+                <p>For various completed tasks, application notifications will be presented to the user based. The
+                    following contextual messages will be used.</p>
                 <p class="warning">Warning!</p>
                 <p class="danger">Danger!</p>
                 <p class="success">Success!</p>
@@ -253,7 +430,7 @@
     </div>
     <div id="footer">
         <div class="container">
-            <p class="text-muted">Copyright My Style Guide</p>
+            <p class="footer-text">Copyright My Style Guide</p>
         </div>
     </div>
 </body>
